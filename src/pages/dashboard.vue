@@ -67,13 +67,18 @@
 
   const cards = ['Today', 'Yesterday']
   const links = [
+     {
+        icono : "mdi-account-multiple-plus",
+        titulo : "Crear usuario",
+        enlace : "/dashboard/Crearusuario"
+    },
     {
         icono : "mdi-inbox-arrow-down",
         titulo : "Matriculas",
         enlace : "/dashboard/matriculas"
     },
      {
-        icono : "mdi-account-multiple-plus",
+        icono : "mdi-account-multiple-outline",
         titulo : "Estudiante",
         enlace : "/dashboard/Estudiante"
     },

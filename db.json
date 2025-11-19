@@ -1,0 +1,35 @@
+{
+  "usuarios": [
+    {
+      "nombre": "Administrador del Sistema",
+      "username": "admin",
+      "email": "admin@school.com",
+      "password": "Admin06",
+      "rol": "admin"
+    },
+    {
+      "id": "f7f3",
+      "nombre": "Maria Lopez",
+      "username": "maria01",
+      "email": "maria01@gmail.com",
+      "password": "maria123",
+      "rol": "Estudiante"
+    },
+    {
+      "id": "d557",
+      "nombre": "Jorge Narvaez",
+      "username": "jnarvaez",
+      "email": "narvaez08@gmail.com",
+      "password": "JN1064",
+      "rol": "Docente"
+    },
+    {
+      "id": "f06e",
+      "nombre": "Jose Martinez",
+      "username": "Jose09",
+      "email": "jose09@gmail.com",
+      "password": "Jose05",
+      "rol": "Estudiante"
+    }
+  ]
+}

@@ -15,6 +15,17 @@
         Colegio Rosa de los Andes
       </h2>
 
+      <!-- ERROR DEL LOGIN -->
+      <v-alert
+        v-if="error"
+        type="error"
+        class="mb-4"
+        dense
+        dismissible
+      >
+        {{ error }}
+      </v-alert>
+
       <v-form @submit.prevent="login">
         <v-text-field
           v-model="usuario"
@@ -43,7 +54,7 @@
           color="pink-darken-2"
           size="large"
           class="text-white mb-4"
-          to='/dashboard'
+          :loading="loading"
         >
           Iniciar sesión
         </v-btn>
@@ -59,22 +70,38 @@
 </template>
 
 <script>
+import authService from "@/services/authservice";
+
 export default {
   name: "LoginApp",
   data() {
     return {
       usuario: "",
       contrasena: "",
+      error: "",
+      loading: false,
     };
   },
   methods: {
-    login() {
-      if (this.usuario && this.contrasena) {
-        // ✅ Redirige al registro de estudiantes automáticamente
-        this.$router.push("/estudiante/RegistroEstudiante");
-      } else {
-        alert("Por favor, completa ambos campos.");
+    async login() {
+      this.error = "";
+      this.loading = true;
+
+      try {
+        const user = await authService.login(this.usuario, this.contrasena);
+
+        if (user) {
+          // LOGIN CORRECTO → IR AL DASHBOARD
+          this.$router.push("/dashboard");
+        } else {
+          // LOGIN INCORRECTO
+          this.error = "Usuario o contraseña incorrectos.";
+        }
+      } catch (e) {
+        this.error = "Error de conexión con el servidor.";
       }
+
+      this.loading = false;
     },
   },
 };

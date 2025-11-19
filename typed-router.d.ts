@@ -19,7 +19,8 @@ declare module 'vue-router/auto-routes' {
    */
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
-    '/dashboard': RouteRecordInfo<'/dashboard', '/dashboard', Record<never, never>, Record<never, never>, '/dashboard/Docente' | '/dashboard/Estudiante' | '/dashboard/matriculas'>,
+    '/dashboard': RouteRecordInfo<'/dashboard', '/dashboard', Record<never, never>, Record<never, never>, '/dashboard/Crearusuario' | '/dashboard/Docente' | '/dashboard/Estudiante' | '/dashboard/matriculas'>,
+    '/dashboard/Crearusuario': RouteRecordInfo<'/dashboard/Crearusuario', '/dashboard/Crearusuario', Record<never, never>, Record<never, never>>,
     '/dashboard/Docente': RouteRecordInfo<'/dashboard/Docente', '/dashboard/Docente', Record<never, never>, Record<never, never>>,
     '/dashboard/Estudiante': RouteRecordInfo<'/dashboard/Estudiante', '/dashboard/Estudiante', Record<never, never>, Record<never, never>>,
     '/dashboard/matriculas': RouteRecordInfo<'/dashboard/matriculas', '/dashboard/matriculas', Record<never, never>, Record<never, never>>,
@@ -41,8 +42,12 @@ declare module 'vue-router/auto-routes' {
       views: never
     }
     'src/pages/dashboard.vue': {
-      routes: '/dashboard' | '/dashboard/Docente' | '/dashboard/Estudiante' | '/dashboard/matriculas'
+      routes: '/dashboard' | '/dashboard/Crearusuario' | '/dashboard/Docente' | '/dashboard/Estudiante' | '/dashboard/matriculas'
       views: 'default'
+    }
+    'src/pages/dashboard/Crearusuario.vue': {
+      routes: '/dashboard/Crearusuario'
+      views: never
     }
     'src/pages/dashboard/Docente.vue': {
       routes: '/dashboard/Docente'
